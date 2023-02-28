@@ -5,22 +5,10 @@
   outputs = inputs:
     inputs.flox-floxpkgs.project inputs
     (_: {
-      packages.mypython2 = {poetry2nix}:
-        poetry2nix.mkPoetryEnv {
-          projectDir = ./.;
-          preferWheels = true;
-          overrides = [poetry2nix.defaultPoetryOverrides];
-        };
-
       packages.mypython = {
         poetry2nix,
         python3Packages,
-        maturin,
-        ruff,
-        cmake,
         rustPlatform,
-        lapack-reference,
-        suitesparse,
         pkgs,
       }:
         poetry2nix.mkPoetryEnv {
@@ -283,19 +271,11 @@
                       ]);
                   }
                 );
-              # cvxpy = super.cvxpy.override { preferWheel = true;};
-              # cvxpy =
-              #   super.cvxpy.overridePythonAttrs
-              #   (
-              #     old: {
-              #       buildInputs = (old.buildInputs or []) ++ [super.setuptools ];
-              #     }
-              #   );
               cvxopt =
                 super.cvxopt.overridePythonAttrs
                 (
                   old: {
-                    buildInputs = (old.buildInputs or []) ++ [super.setuptools lapack-reference suitesparse];
+                    buildInputs = (old.buildInputs or []) ++ [super.setuptools pkgs.lapack-reference pkgs.suitesparse];
                   }
                 );
               autoray =
