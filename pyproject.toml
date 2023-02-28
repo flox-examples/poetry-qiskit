@@ -1,0 +1,76 @@
+[tool.poetry]
+name = "project"
+version = "0.1.0"
+description = "a thing"
+authors = [
+    "Someone <user@example.com>"
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+scipy = "~1.9"
+qiskit = "^0.39"
+cma = "^3"
+joblib = "^1.1"
+qiskit-nature = "^0.4"
+pyscf = { version = "^2.1", optional = true, markers = "sys_platform != 'win32'" }
+picos = "^2.4.11"
+quimb = { version = "^1.4.2", extras = ["tensor"] }
+sparse = "^0.13.0"
+dask = "^2022.10.0"
+cvxpy = "1.2.2"
+numba = "^0.56.4"
+qiskit-experiments = "^0.4.0"
+qdldl = { git = "https://github.com/osqp/qdldl-python.git", rev = "8211ee6f2338232b7763596659fd69f6a7d1dcc4" , branch = "master"}
+cotengra = { git = "https://github.com/jcmgray/cotengra.git", rev = "1a746c6483f6fdabfcf83abd5a436d0ac42921eb", branch = "master" }
+nevergrad = "^0.5.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3"
+black = "^22"
+mypy = "^0.991"
+ruff = "^0.0.244"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7"
+hypothesis = "^6.46.0"
+pytest-cov = "^4"
+pytest-rerunfailures = "^11.0"
+
+[tool.poetry.extras]
+pyscf = ['pyscf']
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.4.2"
+mkdocs-material = "<9"
+mkdocs-jupyter = "^0.22.0"
+mkdocstrings = "^0.20.0"
+mkdocstrings-python = "^0.8.3"
+mike = "^1.1.2"
+mkdocs-gen-files = "^0.4.0"
+mkdocs-literate-nav = "^0.6.0"
+mkdocs-section-index = "^0.3.4"
+black = "^22"
+
+[tool.poetry.group.interactive]
+optional = true
+
+[tool.poetry.group.interactive.dependencies]
+jupyter-console = "*"
+notebook = "*"
+matplotlib = "*"
+
+[tool.poetry.group.perf]
+optional = true
+
+[tool.poetry.group.perf.dependencies]
+scalene = "*"
+line-profiler = {version = "*", extras = ["ipython"]}
+memray = "*"
