@@ -1,31 +1,12 @@
-# `PROJECT_NAME`
-
-
-## Description
-
-This is a short or long textual description of the project.
-
-## Installation
-
-With [Git](https://git-scm.com/downloads), [Python](https://www.python.org/downloads/), and [Poetry](https://python-poetry.org/docs/) installed, simply run the following command to get the project on your machine.
-
-```bash
-git clone https://github.com/dawsonbooth/REPO_NAME
-```
+# Poetry example
 
 ## Usage
-
-The following is an example usage of the project:
-
-```bash
-python src/main.py > out.txt
 ```
-The `out.txt` file then contains:
+flox shell --command python -c "import qdldl; import scipy; import qiskit_aer; print(0.1+0.2)"
 
-```txt
-Hello world!
+flox shell
+
+python
 ```
 
-## License
 
-This software is released under the terms of [MIT license](LICENSE).
