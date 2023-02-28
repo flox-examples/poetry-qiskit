@@ -1,0 +1,15 @@
+{
+  "elements": [
+    {
+      "active": true,
+      "attrPath": "floxEnvs.x86_64-linux.project.inline.packages.x86_64-linux.myproject",
+      "originalUrl": ".",
+      "outputs": null,
+      "storePaths": [
+        "/nix/store/dsqy1bs95njhkglrl2nxr3bix2q08g26-python3-3.10.9-env"
+      ],
+      "url": ""
+    }
+  ],
+  "version": 2
+}
