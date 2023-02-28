@@ -1,10 +1,10 @@
 # Poetry example
 
-## Usage
+## Activation
 ```
-flox shell --command python -c "import qdldl; import scipy; import qiskit_aer; print(0.1+0.2)"
+flox develop --command python -c "import qdldl; import scipy; import qiskit_aer; print(0.1+0.2)"
 
-flox shell
+flox develop
 
 python
 ```
