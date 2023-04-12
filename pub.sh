@@ -42,8 +42,7 @@ for PKG in "${pkgs[@]}"; do
       --stability unstable                                               \
       publish                                                            \
       --attr "packages.$SYSTEM.$PKG"                                     \
-      --build-repo                                                       \
-        'git@github.com:flox-examples/poetry-qiskit.git?ref=aameen.pub'  \
+      --build-repo 'git@github.com:flox-examples/poetry-qiskit.git'      \
       --publish-system "$SYSTEM"                                         \
       --channel-repo 'git@github.com:flox-examples/floxpkgs-python.git'  \
   ;
