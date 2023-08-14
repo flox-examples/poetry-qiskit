@@ -38,7 +38,10 @@ for PKG in "${pkgs[@]}"; do
     exit 1;
   fi
 
+  # enforce the bash impl of publish to avoid breakage with https://github.com/flox/flox/pull/197
+  # TODO: migrate to new publish command
   $FLOX                                                                  \
+     --bash-passthru                                                     \
       --stability unstable                                               \
       publish                                                            \
       --attr "packages.$SYSTEM.$PKG"                                     \
